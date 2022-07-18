@@ -1,0 +1,8 @@
+<a href="{% url 'about' %}">About us</a>
+{% if form.errors %}<p>Invalid Credentials</p>{% endif %}
+<form action="" method="post">
+{% csrf_token %}
+  <input name= "username">
+  <input name= "password">
+  <input type= "submit">
+</form> 

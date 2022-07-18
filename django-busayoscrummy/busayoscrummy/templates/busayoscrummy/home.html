@@ -1,0 +1,19 @@
+<a href="{% url 'addgoal' %}">Click here to create new goals</a>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Weekly Goals</th>
+    <th>Daily Goals</th> 
+    <th>Verify Goals</th>
+    <th>Done Goals</th>
+  </tr>
+  <tr>
+  {% for goal in user.scrumygoals_set.all %} 
+    <td>{{ goal.user }}</td>
+    <td>{{ goal.week }}</td>
+    <td>{{ goal.day }}</td>
+    <td>{{ goal.verify }}</td>
+    <td>{{ goal.done }}</td>
+  </tr>
+</table>

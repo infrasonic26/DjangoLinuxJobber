@@ -1,0 +1,24 @@
+Metadata-Version: 1.1
+Name: django-busayoscrummy
+Version: 0.1
+Summary: A simple django app for linuxjobber internship
+Home-page: https://example.com/
+Author: Olubusayo
+Author-email: bussyice26@gmail.com
+License: BSD License
+Description: This application is a scrumy app as a project for Linuxjobber Django Interns.
+        
+        I hope this app helps you
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 2.1.15
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: www/HTTP
+Classifier: Topic :: Internet :: www/HTTP :: Dynamic Content
