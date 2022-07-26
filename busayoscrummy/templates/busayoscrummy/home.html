@@ -9,11 +9,30 @@
     <th>Done Goals</th>
   </tr>
   <tr>
-  {% for goal in user.scrumygoals_set.all %} 
-    <td>{{ goal.user }}</td>
-    <td>{{ goal.week }}</td>
-    <td>{{ goal.day }}</td>
-    <td>{{ goal.verify }}</td>
-    <td>{{ goal.done }}</td>
+    <td>
+      {% for user in user %}
+        {{user}}<br>
+      {% endfor %}
+    </td>
+    <td>
+      {% for goal in all_week %} 
+        <a href="{% url 'move_goal' goal.goal_id %}>{{ goal.goal_name }} , {{goal.goal_id}}</a><br>
+      {% endfor %}
+    </td>
+    <td>
+      {% for goal in all_day %}
+        <a href="{% url 'move_goal' goal.goal_id%}>{{goal.goal_name}} , {{goal.goal_id}}</a><br>
+      {% endfor %}
+    </td>
+    <td>
+      {% for goal in all_verify %}
+        <a href="{% url 'move_goal' goal.goal_id%}>{{goal.goal_name}} , {{goal.goal_id}}</a><br>
+      {% endfor %}
+    </td>
+    <td>
+      {% for goal in all_done %}
+        <a href="{% url 'move_goal' goal.goal_id%}>{{goal.goal_name}} , {{goal.id}}</a><br>
+      {% endfor %}
+    </td>
   </tr>
 </table>

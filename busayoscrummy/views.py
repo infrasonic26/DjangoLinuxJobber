@@ -39,6 +39,7 @@ def move_goal(request, goal_id):
 
 
 def add_goal(request):
+    current_user = request.user
     form = CreateGoalForm()
     if request.method == 'POST':
         form = CreateGoalForm(request.POST)
@@ -47,15 +48,15 @@ def add_goal(request):
     return render(request, 'busayoscrummy/creategoal.html', {'form':form})
 
 
-
-
 def home(request):
-    user = User.objects.get(username='louis')
-    goals = user.scrumygoals_set.all().values()
+    user = User.objects.all()
     week = GoalStatus.objects.get(status_name='Weekly Goal')
-    all_week = week.scrumygoals_set.all().values()
+    all_week = week.scrumygoals_set.all()
     day = GoalStatus.objects.get(status_name='Daily Goal')
-    all_day = day.scrumygoals_set.all().values
-    context = {'week': all_week, 'day':all_day, 'user': user}
+    all_day = day.scrumygoals_set.all()
+    verify = GoalStatus.objects.get(status_name='Verify Goal')
+    all_verify = verify.scrumygoals_set.all()
+    done = GoalStatus.objects.get(status_name='Done Goal')
+    all_done = done.scrumygoals_set.all()
+    context = {'all_week': all_week, 'all_day':all_day, 'all_verify': all_verify, 'all_done': all_done, 'user': user}
     return render(request,'busayoscrummy/home.html',context)
-
